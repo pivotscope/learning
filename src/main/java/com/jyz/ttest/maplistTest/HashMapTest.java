@@ -11,7 +11,12 @@ public class HashMapTest {
 		hashMap.put("2", "b");
 		hashMap.put("3", "c");
 		hashMap.put("4", "d");
-		
+		hashMap.get("4");
+		String a = "abc";
+		String c = new String("abc");
+		int b = a.hashCode();
+		System.out.println(b==c.hashCode());
+		System.out.println(a.equals(c)&&b==c.hashCode());
 		//变成线程安全
 		Map m = Collections.synchronizedMap(hashMap);
 		System.out.println(m);

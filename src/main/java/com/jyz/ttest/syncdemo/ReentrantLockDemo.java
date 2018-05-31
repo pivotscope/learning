@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockDemo {
 		  
 	    public static void main(String[] arg){  
-	        Runnable t1=new MyThread();  
+	        Runnable t1 = new MyThread();  
 	        new Thread(t1,"t1").start();  
 	        new Thread(t1,"t2").start();  
 	    }  

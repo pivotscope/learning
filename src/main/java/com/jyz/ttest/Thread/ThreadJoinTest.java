@@ -14,11 +14,11 @@ public class ThreadJoinTest {
         Thread t2 = new Thread(new Runner("B"));    
         Thread t3 = new Thread(new Runner("C"));    
         t1.start();    
-        t1.join();    
+//        t1.join();    
         t2.start();    
-        t2.join();    
+//        t2.join();    
         t3.start();    
-        t3.join();    
+//        t3.join();    
         
     }    
         
@@ -33,8 +33,13 @@ class Runner implements Runnable{
     }  
     
     @Override    
-    public void run() {    
-        System.out.println(name+"");    
+    public void run() { 
+    	synchronized (Runner.class) {
+			
+    		for(int i=0;i<10;i++){
+    			System.out.println(name+""+i);    
+    		}
+		}
             
     }    
 }
